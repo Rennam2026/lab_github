@@ -19,11 +19,125 @@
     background-color: rgb(250, 250, 250);
     color: rgb(24, 24, 27);
   }
-  
+
   @media (prefers-color-scheme: dark) {
     body {
       background-color: rgb(9, 9, 11);
       color: rgb(244, 244, 245);
     }
+  }
+}
+
+@layer utilities {
+  .bg-grid-zinc-100 {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' width='32' height='32' fill='none' stroke='rgb(228 228 231)'%3e%3cpath d='m0 .5h32m-32 32h32m-32-32v32m32-32v32'/%3e%3c/svg%3e");
+  }
+
+  .bg-grid-zinc-800 {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' width='32' height='32' fill='none' stroke='rgb(39 39 42)'%3e%3cpath d='m0 .5h32m-32 32h32m-32-32v32m32-32v32'/%3e%3c/svg%3e");
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.6s ease-out;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.6s ease-out;
+  }
+
+  .animate-in {
+    animation: fadeIn 0.3s ease-out;
+  }
+
+  .slide-in-from-top-2 {
+    animation: slideInFromTop 0.3s ease-out;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInFromTop {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgb(228 228 231);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(161 161 170);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(113 113 122);
+}
+
+@media (prefers-color-scheme: dark) {
+  ::-webkit-scrollbar-track {
+    background: rgb(39 39 42);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: rgb(82 82 91);
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgb(161 161 170);
   }
 }
